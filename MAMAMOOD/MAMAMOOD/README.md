@@ -9,10 +9,4 @@
 
 ## Публикация
 
-В Plesk укажите корневую папку сайта:
-
-`httpdocs/MAMAMOOD/public`
-
-Для базы данных выполните `supabase/schema.sql` в Supabase SQL Editor.
-
 Сайт: https://mamamood.kz
