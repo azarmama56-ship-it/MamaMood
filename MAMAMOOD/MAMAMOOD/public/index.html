@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>MAMAMOOD</title>
+  <link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg"><meta name="theme-color" content="#315d83"></head>
+<body>
+<div class="top-counter"><strong id="testTakers">0</strong><span>Test takers</span></div>
+<main id="app">
+<section id="start" class="screen">
+  <div class="brand"><div class="moon"></div><h1>MAMAMOOD</h1></div>
+  <p class="subtitle">Эдинбургская шкала<br>послеродовой депрессии</p>
+
+
+  <div class="form">
+    <input id="age" type="number" min="12" max="100" placeholder="Ваш возраст">
+    <div class="select-box">
+      <select id="status">
+        <option value="" disabled selected>Статус</option>
+        <option value="pregnant">Беременная</option>
+        <option value="mom">Мамочка</option>
+        <option value="neither">Ни то и не другое</option>
+      </select>
+    </div>
+    <button id="startBtn" class="primary" disabled>Начать тест</button>
+  </div>
+
+  
+<div class="anonymity-note">
+  <strong>Анонимность:</strong>
+  Данный тест проходит анонимно. Мы не собираем ФИО, номер телефона или email.
+  Возраст, статус и ответы на вопросы используются для расчёта результата и сохраняются
+  в обезличенном виде для работы счётчика и статистики.
+</div>
+
+<footer>
+    <p>Эдинбургская шкала послеродовой депрессии (EPDS).<br>
+    Авторы: J.L. Cox, J.M. Holden, R. Sagovsky (1987).<br>
+    © The Royal College of Psychiatrists.</p>
+    <p>Это скрининговый тест и не заменяет консультацию врача.</p>
+  </footer>
+</section>
+
+<section id="test" class="screen hidden">
+  <div class="progress"><div id="progress"></div></div>
+  <div class="question-number">Вопрос <span id="number">1</span> из 10</div>
+  <div id="question" class="question"></div>
+  <div id="answers" class="answers"></div>
+  <button id="back" class="back hidden">← Назад</button>
+</section>
+
+<section id="result" class="screen hidden">
+  <div class="result-content">
+    <div id="resultBadge" class="result-badge">✓</div>
+    <h2 id="resultTitle"></h2>
+    <div id="score" class="score">0 / 30</div>
+    <p id="resultText"></p>
+    <div id="selfHarmWarning" class="self-harm-warning hidden"></div>
+    <a id="specialist" class="primary hidden"
+       href="https://acbt.kz/pacientam/"
+       target="_blank" rel="noopener">Связаться со специалистом</a>
+    <div id="dbStatus" class="db-status hidden"></div>
+    <button id="again" class="secondary">Пройти тест снова</button>
+  </div>
+  <footer>
+    <p>Эдинбургская шкала послеродовой депрессии (EPDS).<br>
+    Авторы: J.L. Cox, J.M. Holden, R. Sagovsky (1987).<br>
+    © The Royal College of Psychiatrists.</p>
+    <p>Это скрининговый тест и не заменяет консультацию врача.</p>
+  </footer>
+</section>
+</main>
+<script src="/app.js"></script><script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js").catch(()=>{});}</script>
+</body>
+</html>
